@@ -1,0 +1,14 @@
+/*utilizando o css modules , evita com que uma estilização seja
+ aplicada em mais de um componente, gerando um "rash aleatório", 
+ para cada classe ,fazendo com que a estilização seja
+ única e exclusiva daqela classe*/
+.header {
+  background: var(--gray-800);
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 0;
+}
+
+.header img {
+  height: 2rem;
+}
