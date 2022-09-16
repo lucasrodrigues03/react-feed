@@ -112,10 +112,11 @@ export function Post({ author, publishedAt, content }:PostProps) {
       <div className={styles.commentList}>
        {comments.map(comment => {
          return (
-         <Comment 
+         <Comment
           key={comment}
           content={comment}
          onDeleteComment={deleteComment}
+         onOpenNewModal={open}
          />
         )
        })}

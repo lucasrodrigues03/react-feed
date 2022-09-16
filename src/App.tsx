@@ -3,7 +3,11 @@ import { Post, PostProps } from "./components/Post"
 import { Sidebar } from "./components/Sidebar"
 import "./globalStyle.css"
 import styles from "./App.module.css"
-
+import { OpenEndCloseModal } from "./components/OpenEndCloseModal"
+import { useState } from "react"
+import ReactModal from "react-modal"
+import { Comment } from "./components/Comment"
+import {CommentProps} from "./components/Comment"
 interface Post extends PostProps {
   id: number
 }
@@ -12,8 +16,8 @@ const posts:Post[] = [// como tem várias informações , sera um Array de Obcec
 {
   id: 1,
   author: {
-    avatarUrl: "https://pps.whatsapp.net/v/t61.24694-24/240981312_145189934677186_8003528890227098522_n.jpg?ccb=11-4&oh=01_AVy-R7RZaccqNJasyzT0jqWxh2p_WB3IZ7P3YGycWhJgQA&oe=62D8B489",
-    name: "Ismaile Rodrigues",
+    avatarUrl: "https://github.com/diego3g.png",
+    name: "Diego Fernandes",
     role: "Web Developer"
   },
   content: [
@@ -39,11 +43,26 @@ const posts:Post[] = [// como tem várias informações , sera um Array de Obcec
   },
 ]
 
+ReactModal.setAppElement("#root")
+
 export function App() {
+  const [OpenToModal, setOpenToModal] = useState(false)
+
+  function handleOpenModal() {
+    setOpenToModal(true)
+  }
+
+  function handleCloseModal() {
+    setOpenToModal(false)
+  }
+
+
   return (
     <div>
-    <Header />  
+      <ReactModal isOpen={OpenToModal} onRequestClose={handleCloseModal}>
 
+      </ReactModal>
+    <Header />  
     <div className={styles.wrapper}>
      <Sidebar />
       <main>
