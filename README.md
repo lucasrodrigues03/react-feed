@@ -9,16 +9,12 @@
 </p>
 
 <p align="center">
- <img src="" />
 
   <img  src="src/assets/igniteFeed.png">
 </p>
 
 <br>
 
-<p align="center">
-  <img  src="" width="100%">
-</p>
 
 ## 🚀 Tecnologias
 
